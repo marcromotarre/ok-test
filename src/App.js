@@ -4,12 +4,11 @@ import OpenbankLogo from './assets/img/key_openbank.png';
 import Step1 from "./views/ProductInformation";
 import Step2 from "./views/Form";
 import Step3 from "./views/Feedback";
-
 import "./App.scss";
+import { StrictMode } from "react";
+import ReactDOM from "react-dom";
+const App = () => {
 
-class App extends Component {
-
-  render() {
       return(
           <div className="App">
               <main className="App-content">
@@ -52,7 +51,7 @@ class App extends Component {
                       <li>Se puede renombrar, quitar o añadir cualquier recurso, fichero, asset que se crea necesario para mejorar o embellecer la prueba.</li>
                       <li>La iconografia puede obtenerse de donde guste</li>
                       <li>Nice to haves a tener en cuenta
-                      <ul>
+                              <ul>
                           <li>Estructura del proyecto</li>
                           <li>Control de la UI durante las llamadas asíncronas</li>
                           <li>Generalización de componentes y utilidades</li>
@@ -72,7 +71,12 @@ class App extends Component {
           </div>
       );
 }
-}
 
-export default App;
 
+ReactDOM.render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+    document.getElementById("root")
+  );
+  
